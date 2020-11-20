@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grafos</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/vis-network.min.js"></script>
+    <script type="text/javascript" src="js/assets.js"></script>
+  </head>
+  <body onload="draw()">
+    <div class="alert alert-secondary text-center" role="alert">
+      <h1><strong>GRAFOS</strong></h1>
+      <p>Ejercicio de grafos para la clase de matematicas discretas</p>
+    </div>
+
+    <div class="container">
+      <div class="alert alert-secondary">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="card">
+              <h5 class="card-header">Nodo</h5>
+              <div class="card-body">
+                <p class="card-text">Poner la Cantidad de nodos que deseas</p>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="node-label" />
+                </div>
+                <div id="crearNodo"></div>
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  onclick="addNode();"
+                >
+                  Añadir
+                </button>
+                <button
+                  type="submit"
+                  class="btn btn-danger"
+                  onClick="location.reload();"
+                >
+                  Borrar Todo
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card">
+              <h5 class="card-header">Conexion</h5>
+              <div class="card-body">
+                <p class="card-text">Poner la conexion que deseas</p>
+                <div class="form-group">
+                  <p class="card-text">Conectar</p>
+                  <input type="number" class="form-control" id="edge-from" />
+                  <p class="card-text">Con</p>
+                  <input type="number" class="form-control" id="edge-to" />
+                </div>
+                <div id="crearEdge"></div>
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  onclick="addEdge();"
+                >
+                  Añadir
+                </button>
+                <button
+                  type="submit"
+                  class="btn btn-danger"
+                  onclick="edgeRandom();"
+                >
+                  Conexiones Aleatorias
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="alert alert-secondary">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="card">
+              <h5 class="card-header">Tabla</h5>
+              <div class="card-body">
+                <div id="datos"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card">
+              <h5 class="card-header">Grafica</h5>
+              <div class="card-body">
+                <div id="mynetwork" style="height: 500px"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
